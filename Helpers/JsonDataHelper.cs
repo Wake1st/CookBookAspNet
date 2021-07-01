@@ -9,7 +9,7 @@ namespace aspnetcookbook
   {
     public List<Ingrediant> GetIngrediants()
     {
-      return JsonConvert.DeserializeObject<List<Ingrediant>>(File.ReadAllText("../Data/ingrediants.json"));
+      return JsonConvert.DeserializeObject<List<Ingrediant>>(File.ReadAllText("./Data/ingrediants.json"));
     }
 
     public List<Recipe> GetRecipes()
