@@ -4,15 +4,16 @@ namespace aspnetcookbook.Controllers
 {
   public class RecipeController : Controller
   {
+    private readonly JsonDataHelper _dataHelper;
 
-    public RecipeController()
+    public RecipeController(JsonDataHelper dataHelper)
     {
-
+      _dataHelper = dataHelper;
     }
 
     public IActionResult Index()
     {
-      return View();
+      return View(_dataHelper.GetRecipes());
     }
   }
 }

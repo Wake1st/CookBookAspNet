@@ -4,15 +4,16 @@ namespace aspnetcookbook.Controllers
 {
   public class KitchenwareController : Controller
   {
+    private readonly JsonDataHelper _dataHelper;
 
-    public KitchenwareController()
+    public KitchenwareController(JsonDataHelper dataHelper)
     {
-
+      _dataHelper = dataHelper;
     }
 
     public IActionResult Index()
     {
-      return View();
+      return View(_dataHelper.GetKitchenware());
     }
   }
 }
